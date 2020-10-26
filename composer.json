@@ -1,0 +1,14 @@
+{
+  "name": "sweikenb/php-featureflags",
+  "description": "Simple feature-flags management for PHP projects.",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sweikenb\\Library\\FeatureFlags\\": ""
+    }
+  }
+}
