@@ -7,13 +7,13 @@ use Sweikenb\Library\FeatureFlags\Api\FeatureFlagProviderInterface;
 /**
  * The actual service that checks the flags status
  */
-class FetureFlagsService
+class FeatureFlagsService
 {
     private ?FeatureFlagProviderInterface $provider;
     private bool $defaultPolicy;
 
     /**
-     * @param \Sweikenb\Library\FeatureFlags\Api\FeatureFlagProviderInterface|null $provider
+     * @param FeatureFlagProviderInterface|null $provider
      * @param bool $defaultPolicy
      */
     public function __construct(?FeatureFlagProviderInterface $provider = null, bool $defaultPolicy = false)
@@ -25,7 +25,7 @@ class FetureFlagsService
     /**
      * Sets/updates the flags provider
      *
-     * @param \Sweikenb\Library\FeatureFlags\Api\FeatureFlagProviderInterface $provider
+     * @param FeatureFlagProviderInterface $provider
      */
     public function setProvider(FeatureFlagProviderInterface $provider): void
     {
@@ -33,7 +33,8 @@ class FetureFlagsService
     }
 
     /**
-     * Checks if the given flag is active, calls the optional callback if provided an feature is active and returns the status of the flag.
+     * Checks if the given flag is active, calls the optional callback if provided a feature is active and returns the
+     * status of the flag.
      *
      * @param string $flag
      * @param callable|null $callback

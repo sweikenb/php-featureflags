@@ -1,9 +1,9 @@
 <?php
 
-use Sweikenb\Library\FeatureFlags\Provider\SimpleProvider;
-use Sweikenb\Library\FeatureFlags\Service\FetureFlagsService;
+use Sweikenb\Library\FeatureFlags\Provider\ChaosMonkeyProvider;
+use Sweikenb\Library\FeatureFlags\Service\FeatureFlagsService;
 
-require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 /*
  * Define your featurs as simple array
@@ -18,8 +18,14 @@ $myApplicationFlags = [
 /*
  * Initialize the service
  */
-$provider = new SimpleProvider($myApplicationFlags);
-$featureFlags = new FetureFlagsService($provider);
+$provider = new ChaosMonkeyProvider($myApplicationFlags);
+$featureFlags = new FeatureFlagsService($provider);
+
+/*
+ * Info
+ */
+echo "Your Features for this run:\n";
+var_dump($provider->getFlags());
 
 /*
  * Simple check
