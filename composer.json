@@ -10,5 +10,13 @@
         "psr-4": {
             "Sweikenb\\Library\\FeatureFlags\\": "src"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sweikenb\\Library\\FeatureFlags\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
     }
 }

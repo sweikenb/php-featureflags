@@ -1,25 +1,24 @@
 <?php
 
-use Sweikenb\Library\FeatureFlags\Provider\SimpleProvider;
+use Sweikenb\Library\FeatureFlags\Provider\DefaultProvider;
 use Sweikenb\Library\FeatureFlags\Service\FeatureFlagsService;
 
 require __DIR__ . '/../vendor/autoload.php';
 
 /*
- * Define your featurs as simple array
+ * Define your features as simple array
  */
 $myApplicationFlags = [
     'login' => true,
-    'registation' => true,
+    'registration' => true,
     'emails' => true,
     'search' => false,
 ];
 
-/*
- * Initialize the service
- */
-$provider = new SimpleProvider($myApplicationFlags);
-$featureFlags = new FeatureFlagsService($provider);
+$defaultPolicy = false;
+
+$provider = new DefaultProvider($myApplicationFlags);
+$featureFlags = new FeatureFlagsService($provider, $defaultPolicy);
 
 /*
  * Simple check
